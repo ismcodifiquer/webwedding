@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+
+
+.fondisimo::before {
+  content: "";
+  position: absolute; /* Posiciona el pseudo-elemento */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/7iv00106_202407161449276696887783a4e.sized.jpg');
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  opacity: 0.5; /* Controla la opacidad de la imagen */
+  z-index: 0; /* Coloca el pseudo-elemento detrás del contenido */
+}
+
+.login-container {
+  position: relative; /* Asegura que el contenido esté en el mismo contexto de apilamiento */
+  z-index: 10; /* Asegura que el contenido esté por encima del pseudo-elemento */
+}

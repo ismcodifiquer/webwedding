@@ -1,0 +1,63 @@
+
+
+.navbarbarra {
+  position: absolute;
+  background-color: beige;
+  width: 100%;
+  z-index: 2;
+}
+
+
+.contenido {
+  position: absolute;
+  background: url(../../assets/backgroundtodo.jpg);
+  z-index: 1;
+}
+
+.infoLeftMenuItemSelected {
+  position: absolute;
+  float: left;
+  width: 195px;
+  height: 195px;
+  font: normal 24px pacifico;
+    line-height: normal;
+  color: #e60909;
+  line-height: 34px;
+  text-align: center;
+  text-decoration: none;
+  background: url(../../assets/submenuButton.0.normal.png);
+  cursor: pointer;
+
+  z-index: 3;
+}
+
+.infoLeftMenuItemSelected:hover {
+  background: url(../../assets/submenuButton.0.over.png);
+}
+
+.infoLeftMenuItemSelected.focused {
+  background: url(../../assets/submenuButton.0.over.png);
+}
+
+/* Opcional: Si quieres que los estilos de :hover también se apliquen cuando el elemento tenga la clase focused */
+.infoLeftMenuItemSelected.focused:hover {
+  background: url(../../assets/submenuButton.0.over.png);
+}
+
+#infoLeftMenuWrapper {
+  position: absolute;
+  float: left;
+  width: 195px;
+  margin-left: 120px;
+  margin-top: 180px;
+  margin-bottom: 150px;
+}
+.infoLeftMenuItemText {
+  display: table-cell;
+  width: 125px;
+  height: 195px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+

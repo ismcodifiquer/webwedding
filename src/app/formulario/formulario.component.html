@@ -1,0 +1,110 @@
+<app-navbar class="navbarbarra"></app-navbar>
+<body class="cuerpoform">
+  <div class="containered">
+    <h1 class="titulo text-4xl">Formulario de Asistencia para la gran fiesta</h1>
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white shadow-md rounded-lg p-5 w-50 mt-[-150px] formulary">
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-4">
+            <div class="flex flex column justify-center items-start">
+              <label class="block text-gray-700 text-sm font-bold mb-2">¿Asistirás?</label>
+              <div class="flex items-center mb-2 ml-2">
+                <input
+                  type="checkbox"
+                  name="asistir"
+                  class="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <span class="text-gray-700 ml-2">Sí</span>
+              </div>
+              <div class="flex items-center ml-2">
+                <input
+                  type="checkbox"
+                  name="noAsistir"
+                  class="form-checkbox h-5 w-5 text-blue-600"
+                />
+                <span class="text-gray-700 ml-2">No</span>
+              </div>
+            </div>
+
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              [(ngModel)]="name"
+              name="name"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Ingresa tu nombre"
+            />
+            <label class="block text-gray-700 text-sm font-bold mb-2 mt-2" for="name2">Nombre acompañantes</label>
+            <input
+              type="text"
+              id="name2"
+              [(ngModel)]="name2"
+              name="name2"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Ingresa tu nombre"
+            />
+          </div>
+          <div class="mb-10">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="allergies">Alergias o Intolerancias</label>
+            <textarea
+              id="allergies"
+              [(ngModel)]="allergies"
+              name="allergies"
+              rows="3"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Especifica tus alergias o intolerancias"
+            ></textarea>
+          </div>
+          <div class="mb-8">
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                [(ngModel)]="vegan"
+                name="vegan"
+                class="form-checkbox h-5 w-5 text-blue-600"
+              />
+              <span class="ml-2 text-gray-700">Soy vegano/a</span>
+            </label>
+            <label class="inline-flex items-center ml-4">
+              <input
+                type="checkbox"
+                name="celiac"
+                class="form-checkbox h-5 w-5 text-blue-600"
+              />
+              <span class="ml-2 text-gray-700">Soy vegetariano/a</span>
+            </label>
+            <label class="inline-flex items-center ml-4">
+              <input
+                type="checkbox"
+                name="celiac"
+                class="form-checkbox h-5 w-5 text-blue-600"
+              />
+              <span class="ml-2 text-gray-700">Soy celíaco/a</span>
+            </label>
+          </div>
+
+          <label for="otros" class="ml-2 text-gray-700">Otros:</label>
+          <input
+            type="text"
+            id="otros"
+            name="otros"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Especifica cualquier otra intolerancia"
+          />
+
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,37 @@
+<div>
+  <app-navbar class="navbarbarra text-black"></app-navbar>
+</div>
+
+<div class="w-full h-full contenido">
+
+
+</div>
+
+<div id="infoLeftMenuWrapper">
+  <a (click)="selectComponent('ceremonia')" class="infoLeftMenuItemSelected">
+    <span class="infoLeftMenuItemText pl-[38%]">
+      Ceremonia
+    </span>
+  </a>
+
+  <a (click)="selectComponent('restaurante')" class="infoLeftMenuItemSelected mt-60">
+    <span class="infoLeftMenuItemText pl-[43%]">
+      Banquete
+    </span>
+  </a>
+
+
+
+</div>
+<div *ngIf="currentComponent==='ceremonia'">
+  <app-paginasab></app-paginasab>
+</div>
+
+<div *ngIf="currentComponent==='restaurante'">
+  <app-paginascd></app-paginascd>
+</div>
+
+
+
+
+

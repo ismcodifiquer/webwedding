@@ -1,0 +1,42 @@
+<nav class="flex flex-wrap justify-between items-center relative w-full navigator mb-4">
+  <div class="flex flex-row w-full h-full items-center justify-between">
+    <div class="flex items-center w-full">
+      <img src="../assets/inviboda-redi.png" alt="logo boda" class="h-auto bg-beige-200">
+
+      <!-- Botón hamburguesa para móviles -->
+      <button class="lg:hidden ml-[70%]" (click)="toggleMenu()">
+        <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+        <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
+        <span class="block w-6 h-0.5 bg-gray-600"></span>
+      </button>
+    </div>
+
+    <!-- Menú para pantallas grandes -->
+    <div class="hidden lg:flex flex-grow w-full items-center justify-center">
+      <ul class="flex flex-row justify-center space-x-8 w-full">
+        <li class="font-bold hover:bg-green-800 hover:text-white p-2">
+          <a href="/home">Inicio</a>
+        </li>
+        <li class="font-bold hover:text-green-900 ho p-2">
+          <a href="/about">Información útil</a>
+        </li>
+        <li class="font-bold hover:text-green-900 ho p-2">
+          <a href="/form">Formulario</a>
+        </li>
+        <li class="font-bold hover:text-green-900 ho p-2">
+          <a href="/contact">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Menú móvil -->
+  <ul [ngClass]="{'bg-beige-200': isMenuOpen, 'bg-none': !isMenuOpen}"
+      class="nav-links mobile-menu flex flex-col items-end lg:hidden absolute top-full right-0 shadow-md"
+      [class.hidden]="!isMenuOpen">
+    <li class="p-4 border-b text-black"><a href="/home">Inicio</a></li>
+    <li class="p-4 border-b text-black"><a href="/about">Información útil</a></li>
+    <li class="p-4 border-b text-black"><a href="/form">Formulario</a></li>
+    <li class="p-4 text-black"><a href="/contact">Contacto</a></li>
+  </ul>
+</nav>
