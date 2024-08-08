@@ -1,18 +1,19 @@
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="fondisimo">
-      <div class="login-container bg-white shadow-md rounded-lg p-8">
-          <h2 class="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
-          <form (ngSubmit)="redirect()"> <!-- Usa ngSubmit para manejar el envío del formulario -->
-              <div class="mb-6">
-                  <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Contraseña</label>
-                  <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="**********" [(ngModel)]="passwordValue" name="password"> <!-- Asegúrate de agregar el atributo name -->
-              </div>
-              <div class="flex items-center justify-between">
-                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                      Iniciar Sesión
-                  </button>
-              </div>
-          </form>
+  <div class="absolute w-screen h-screen">
+    <img src="../../assets/7iv00106_202407161449276696887783a4e.sized.jpg" alt="" class="fondisimo absolute inset-0 w-full h-full object-cover" width="100%" height="100%">
+  </div>
+  <div class="login-container bg-white shadow-md rounded-lg p-8 z-10 relative">
+    <h2 class="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
+    <form (ngSubmit)="redirect()">
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Contraseña</label>
+        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="**********" [(ngModel)]="passwordValue" name="password">
       </div>
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+          Iniciar Sesión
+        </button>
+      </div>
+    </form>
   </div>
 </body>

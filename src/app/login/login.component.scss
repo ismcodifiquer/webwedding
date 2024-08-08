@@ -1,25 +1,33 @@
 body {
   margin: 0;
   height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  overflow: hidden; /* Evita el scroll si no es necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-
-
-.fondisimo::before {
-  content: "";
-  position: absolute; /* Posiciona el pseudo-elemento */
+.fondisimo {
+  opacity: 0.5;
+  position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('../../assets/7iv00106_202407161449276696887783a4e.sized.jpg');
-  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-  background-position: center; /* Centra la imagen */
-  opacity: 0.5; /* Controla la opacidad de la imagen */
-  z-index: 0; /* Coloca el pseudo-elemento detrás del contenido */
+  left: 0%;
+  width: 100vw; /* Asegura que la imagen cubra todo el ancho de la ventana */
+  height: 100vh; /* Asegura que la imagen cubra toda la altura de la ventana */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
 }
 
 .login-container {
-  position: relative; /* Asegura que el contenido esté en el mismo contexto de apilamiento */
-  z-index: 10; /* Asegura que el contenido esté por encima del pseudo-elemento */
+  z-index: 10; /* Asegura que el contenido esté por encima de la imagen de fondo */
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .fondisimo {
+    width: 180vw;
+    height: 180vh;
+    object-position: 83% 87%;
+    margin-top: -107%;
+  }
 }
