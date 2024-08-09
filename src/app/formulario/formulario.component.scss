@@ -75,3 +75,40 @@ body {
 }
 
 
+@media (max-width: 498px){
+  .body {
+    height: auto;
+  }
+  .containered {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 31%;
+    overflow-y: auto;
+    height: auto;
+  }
+  .titulo {
+    margin-top: 0px;
+    width: auto;
+    margin-left: 10px;
+    margin-right: 12px;
+    font-size: 20px;
+    text-align: center;
+
+  }
+  .formulary {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .formu-correct {
+    width: 100%;
+    height: auto;
+  }
+  .container-form {
+    width: 100%;
+    text-align: center;
+    margin-top: 12%;
+    height: auto;
+
+  }
+}
