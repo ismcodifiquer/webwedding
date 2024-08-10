@@ -2,36 +2,39 @@
   <app-navbar class="navbarbarra text-black"></app-navbar>
 </div>
 
-<div class="w-full h-full contenido">
+<div class="w-full h-full contenido"></div>
 
-
+<!-- Menú móvil -->
+<div class="lg:hidden mt-4 px-4">
+  <select (change)="onSelectChange($event)" class="w-full p-2 border rounded">
+    <option value="" disabled selected>Seleccione una opción</option>
+    <option value="ceremonia">Ceremonia</option>
+    <option value="restaurante">Banquete</option>
+  </select>
 </div>
 
-<div id="infoLeftMenuWrapper">
-  <a (click)="selectComponent('ceremonia')" class="infoLeftMenuItemSelected">
-    <span class="infoLeftMenuItemText pl-[38%]">
-      Ceremonia
-    </span>
-  </a>
+<!-- Menú de escritorio -->
+<div class="hidden lg:block mt-4">
+  <div id="infoLeftMenuWrapper">
+    <a (click)="selectComponent('ceremonia')" [class.infoLeftMenuItemSelected]="currentComponent === 'ceremonia'">
+      <span class="infoLeftMenuItemText pl-[38%]">
+        Ceremonia
+      </span>
+    </a>
 
-  <a (click)="selectComponent('restaurante')" class="infoLeftMenuItemSelected mt-60">
-    <span class="infoLeftMenuItemText pl-[43%]">
-      Banquete
-    </span>
-  </a>
-
-
-
+    <a (click)="selectComponent('restaurante')" [class.infoLeftMenuItemSelected]="currentComponent === 'restaurante'">
+      <span class="infoLeftMenuItemText pl-[43%]">
+        Banquete
+      </span>
+    </a>
+  </div>
 </div>
-<div *ngIf="currentComponent==='ceremonia'">
+
+<!-- Contenido dinámico -->
+<div *ngIf="currentComponent === 'ceremonia'" class="ceremonia">
   <app-paginasab></app-paginasab>
 </div>
 
-<div *ngIf="currentComponent==='restaurante'">
+<div *ngIf="currentComponent === 'restaurante'" class="banquete">
   <app-paginascd></app-paginascd>
 </div>
-
-
-
-
-

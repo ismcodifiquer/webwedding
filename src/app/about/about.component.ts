@@ -5,36 +5,42 @@ import { PaginasabComponent } from '../paginasab/paginasab.component';
 import { PaginascdComponent } from '../paginascd/paginascd.component';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-about',
   standalone: true,
   imports: [NavbarComponent, PaginasabComponent, PaginascdComponent, CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrls: ['./about.component.scss'] // Corrección: 'styleUrls' en lugar de 'styleUrl'
 })
-export class AboutComponent implements OnInit{
+export class AboutComponent implements OnInit {
+  currentComponent: string = 'ceremonia'; // Componente predeterminado
+  isMenuOpen = false;
 
+  constructor(private renderer: Renderer2) {}
 
-  currentComponent: string = '';
-
-  constructor(private rendered: Renderer2){}
-
-  ngOnInit(){
+  ngOnInit() {
     setTimeout(() => {
       const selectedElement = document.querySelector('.infoLeftMenuItemSelected') as HTMLElement;
       if (selectedElement) {
-        this.rendered.addClass(selectedElement, 'focused');
+        this.renderer.addClass(selectedElement, 'focused');
         selectedElement.click();
-
       } else {
         console.log('No se encontró el elemento con la clase infoLeftMenuItemSelected');
       }
     }, 0);
   }
 
-  selectComponent(component: string) {
-    this.currentComponent = component;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
+  selectComponent(component: string) {
+    this.currentComponent = component;
+    this.isMenuOpen = false; // Cierra el menú después de seleccionar
+  }
+
+  onSelectChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectComponent(selectElement.value);
+  }
 }

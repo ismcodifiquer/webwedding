@@ -80,3 +80,32 @@
   color: #01C3A4;
   text-decoration: none;
 }
+
+
+@media (max-width: 600px) {
+
+  .infoElementTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1%;
+    width: 50%;
+    font-size: 86%;
+  }
+
+  .infoElementWrapper {
+    margin-bottom: 12%;
+    margin-left: 6%;
+  }
+  #infoRightContentWrapper {
+
+    width: 92vw;
+    margin-top: 20%;
+
+  }
+  .infoElementImage {
+    width: 48%;
+  }
+
+}
