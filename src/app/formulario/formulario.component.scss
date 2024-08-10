@@ -5,7 +5,7 @@
   position: absolute;
   background-color: beige;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 body {
@@ -78,6 +78,9 @@ body {
 @media (max-width: 600px){
   .body {
     height: auto;
+  }
+  .navbarbarra {
+    height: 0%;
   }
   .containered {
     width: 80%;
