@@ -43,11 +43,16 @@ nav {
 
 @media screen and (max-width: 900px)  {
   .navigator {
-    background-color: #f5f5dc;
+    background-color: gray;
+
   }
   img {
-    width: 20%;
-    height: 20%;
+    width: 35%;
+    height: 35%;
+    margin-top: -10%;
+    margin-left: -8%;
+    margin-bottom: -10%;
+
   }
 
 }

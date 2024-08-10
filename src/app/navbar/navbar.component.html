@@ -4,10 +4,10 @@
       <img src="../../assets/backtext3.png" alt="logo boda">
 
       <!-- Botón hamburguesa para móviles -->
-      <button class="lg:hidden ml-[70%]" (click)="toggleMenu()">
-        <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
-        <span class="block w-6 h-0.5 bg-gray-600 mb-1"></span>
-        <span class="block w-6 h-0.5 bg-gray-600"></span>
+      <button class="lg:hidden ml-[60%]" (click)="toggleMenu()">
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
       </button>
     </div>
 
@@ -31,12 +31,12 @@
   </div>
 
   <!-- Menú móvil -->
-  <ul [ngClass]="{'bg-beidge-200 opacity-65': isMenuOpen, 'bg-none': !isMenuOpen}"
+  <ul [ngClass]="{'bg-gray-600 opacity-75': isMenuOpen, 'bg-none': !isMenuOpen}"
       class="nav-links mobile-menu flex flex-col items-end lg:hidden absolute top-full right-0 shadow-md"
       [class.hidden]="!isMenuOpen">
-    <li class="p-4 border-b text-black"><a href="/home">Inicio</a></li>
-    <li class="p-4 border-b text-black"><a href="/about">Información útil</a></li>
-    <li class="p-4 border-b text-black"><a href="/form">Formulario</a></li>
-    <li class="p-4 text-black"><a href="/contact">Contacto</a></li>
+    <li class="p-4 border-b w-full text-white hover:bg-black"><a href="/home">Inicio</a></li>
+    <li class="p-4 border-b w-full text-white hover:bg-black"><a href="/about">Información útil</a></li>
+    <li class="p-4 border-b w-full text-white hover:bg-black"><a href="/form">Formulario</a></li>
+    <li class="p-4 w-full text-white hover:bg-black"><a href="/contact">Contacto</a></li>
   </ul>
 </nav>
