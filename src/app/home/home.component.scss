@@ -85,54 +85,31 @@
 /* Ajustes responsivos */
 @media (max-width: 900px) {
   #person1name, #person2name {
-    font-size: 36px;
+    font-size: 7.2%;
   }
 
   #guarda {
-    font-size: 20px;
-    margin-top: -165px;
+    font-size: 20%;
+    margin-top: -165%;
   }
 
   .fechas {
-    margin-top: -12px;
+    margin-top: -12%;
   }
 
   #datet, #year {
-    font-size: 36px;
+    font-size: 7.2%;
   }
 
   #indexStampWrapper {
     min-height: 300px;
-    margin-top: -228px;
+    margin-top: -228%;
   }
 }
 
 
 
-/* Ajustes responsivos */
-@media (max-width: 640px) {
-  #person1name, #person2name {
-    font-size: 36px;
-  }
 
-  #guarda {
-    font-size: 20px;
-    margin-top: -165px;
-  }
-
-  .fechas {
-    margin-top: -12px;
-  }
-
-  #datet, #year {
-    font-size: 36px;
-  }
-
-  #indexStampWrapper {
-    min-height: 150px;
-    margin-top: -228px;
-  }
-}
 
 @media (max-width: 600px) {
   #person1name, #person2name {
