@@ -6,7 +6,7 @@
       <div class="bg-white shadow-md rounded-lg p-5 w-50 mt-[-150px] formulary">
         <form (ngSubmit)="onSubmit()">
           <div class="mb-4">
-            <div class="flex flex column justify-center items-start formu-correct">
+            <div class="flex justify-center items-start formu-correct">
               <label class="block text-gray-700 text-sm font-bold mb-2">¿Asistirás?</label>
               <div class="flex items-center mb-2 ml-2">
                 <input
@@ -58,7 +58,7 @@
               placeholder="Especifica tus alergias o intolerancias"
             ></textarea>
           </div>
-          <div class="mb-8">
+          <div class="mb-8 vegan">
             <label class="inline-flex items-center">
               <input
                 type="checkbox"
@@ -66,9 +66,9 @@
                 name="vegan"
                 class="form-checkbox h-5 w-5 text-blue-600"
               />
-              <span class="ml-2 text-gray-700">Soy vegano/a</span>
+            <span class="ml-2 text-gray-700 vegan1">Soy vegano/a</span>
             </label>
-            <label class="inline-flex items-center ml-4">
+            <label class="inline-flex items-center ml-0 vegan2">
               <input
                 type="checkbox"
                 name="celiac"
@@ -76,7 +76,7 @@
               />
               <span class="ml-2 text-gray-700">Soy vegetariano/a</span>
             </label>
-            <label class="inline-flex items-center ml-4">
+            <label class="inline-flex items-center ml-0">
               <input
                 type="checkbox"
                 name="celiac"
@@ -85,15 +85,16 @@
               <span class="ml-2 text-gray-700">Soy celíaco/a</span>
             </label>
           </div>
-
-          <label for="otros" class="ml-2 text-gray-700">Otros:</label>
-          <input
-            type="text"
-            id="otros"
-            name="otros"
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="Especifica cualquier otra intolerancia"
-          />
+          <div id="otros1">
+            <label for="otros" class="ml-2 text-gray-700">Otros:</label>
+            <input
+              type="text"
+              id="otros"
+              name="otros"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Especifica cualquier otra intolerancia"
+            />
+          </div>
 
           <div class="flex items-center justify-between">
             <button

@@ -97,18 +97,30 @@ body {
   }
   .formulary {
     width: 100%;
-    height: auto;
     text-align: center;
   }
   .formu-correct {
     width: 100%;
-    height: auto;
+
   }
   .container-form {
     width: 100%;
     text-align: center;
-    margin-top: 12%;
+    margin-top: 18%;
     height: auto;
 
   }
+
+  #otros1 {
+    margin-top: -20px;
+  }
+
+  .vegan {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+    margin-top: -28px;
+  }
+
+
 }
