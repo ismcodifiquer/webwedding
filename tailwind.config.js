@@ -10,6 +10,10 @@ module.exports = {
         },
         micolor: '#708091'
       },
+      fontFamily: {
+        pacifico: ['pacifico', 'sans-sherif'],
+        salome: ['salomeRegular', 'sans-sherif']
+      },
     },
   },
   plugins: [],

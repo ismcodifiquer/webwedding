@@ -1,64 +1,63 @@
-<app-navbar class="navbarbarra"></app-navbar>
-<body class="cuerpoform">
-  <div class="containered">
-    <h1 class="titulo text-4xl">Formulario de Asistencia para la gran fiesta</h1>
+<app-navbar class="bg-gray-500 absolute w-full text-white z-10"></app-navbar>
+<body class="absolute w-screen h-screen overflow-y-hidden" style="background-image: url('../../assets/backgroundtodo.jpg'); background-size: auto;">
+  <div class="absolute rounded-3xl border-2 border-solid mt-40 bg-gradient-to-r from-gray-700 to-black shadow-2xl shadow-gray-700 h-[76%] w-[95%] ml-[2%] border-blue-300 md:w-[32%]  md:mt-[10%] md:ml-[50vh] md:h-[72%] md:shadow-2xl md:shadow-gray-700" >
+    <h1 class="absolute text-2xl text-white font-salome flex flex-row items-center justify-center text-center w-full font-extrabold md:mt-[7%] md:font-extrabold md:text-white">Formulario de Asistencia para la gran fiesta</h1>
     <div class="flex items-center justify-center min-h-screen container-form">
-      <div class="bg-white shadow-md rounded-lg p-5 w-50 mt-[-150px] formulary">
+      <div class="bg-blue-100 shadow-md border-2 border-solid border-blue-300 rounded-xl p-5 w-[90%] mt-[-150px] mr-8vh] md:mt-[-38%] md:bg-blue-200 md:border-2 md:border-solid md:border-blue-300">
         <form (ngSubmit)="onSubmit()">
           <div class="mb-4">
-            <div class="flex justify-center items-start formu-correct">
-              <label class="block text-gray-700 text-sm font-bold mb-2">¿Asistirás?</label>
-              <div class="flex items-center mb-2 ml-2">
+            <div class="flex justify-center items-center pt-2 pb-2 bg-gradient-to-r from-gray-700 to-black shadow-3xl text-white rounded-lg border-2 border-solid border-blue-300">
+              <label class="block text-sm font-bold ">¿Asistirás?</label>
+              <div class="flex items-center pl-5">
                 <input
                   type="checkbox"
-                  name="asistir"
+                  [checked]="asistir"
+                  (change)="toggleCheckbox('asistir')"
                   class="form-checkbox h-5 w-5 text-blue-600"
                 />
-                <span class="text-gray-700 ml-2">Sí</span>
+                <span class="text-white pl-2">Sí</span>
               </div>
-              <div class="flex items-center ml-2">
+              <div class="flex items-center pl-4">
                 <input
                   type="checkbox"
-                  name="noAsistir"
-                  class="form-checkbox h-5 w-5 text-blue-600"
+                  [checked]="noAsistir"
+                  (change)="toggleCheckbox('noAsistir')"
+                  class=" h-5 w-5 text-blue-600"
                 />
-                <span class="text-gray-700 ml-2">No</span>
+                <span class="text-white pl-2">No</span>
               </div>
             </div>
 
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Nombre</label>
             <input
               type="text"
               id="name"
               [(ngModel)]="name"
               name="name"
               required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow rounded w-full py-2 px-3 placeholder:text-black text-gray-700 leading-tight md:w-full border-b-2 mt-8 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent"
               placeholder="Ingresa tu nombre"
             />
-            <label class="block text-gray-700 text-sm font-bold mb-2 mt-2" for="name2">Nombre acompañantes</label>
             <input
               type="text"
               id="name2"
               [(ngModel)]="name2"
               name="name2"
               required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Ingresa tu nombre"
+              class="shadow rounded w-full py-2 px-3 placeholder:text-black text-gray-700 leading-tight md:w-full border-b-2 mt-8 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent"
+              placeholder="Ingresa el nombre de tu acompañante/es"
             />
           </div>
-          <div class="mb-10">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="allergies">Alergias o Intolerancias</label>
+          <div class="mb-10 flex flex-col">
             <textarea
               id="allergies"
               [(ngModel)]="allergies"
               name="allergies"
               rows="3"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="shadow rounded w-full py-2 px-3 placeholder:text-black placeholder: text-gray-700 leading-tight md:w-full border-b-2 mt-8 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent"
               placeholder="Especifica tus alergias o intolerancias"
             ></textarea>
           </div>
-          <div class="mb-8 vegan">
+          <div class="mb-8 vegan flex flex-col">
             <label class="inline-flex items-center">
               <input
                 type="checkbox"
@@ -71,7 +70,8 @@
             <label class="inline-flex items-center ml-0 vegan2">
               <input
                 type="checkbox"
-                name="celiac"
+                name="vegetariano"
+                [(ngModel)]="vegetariano"
                 class="form-checkbox h-5 w-5 text-blue-600"
               />
               <span class="ml-2 text-gray-700">Soy vegetariano/a</span>
@@ -80,26 +80,18 @@
               <input
                 type="checkbox"
                 name="celiac"
+                [(ngModel)]="celiaco"
                 class="form-checkbox h-5 w-5 text-blue-600"
               />
               <span class="ml-2 text-gray-700">Soy celíaco/a</span>
             </label>
           </div>
-          <div id="otros1">
-            <label for="otros" class="ml-2 text-gray-700">Otros:</label>
-            <input
-              type="text"
-              id="otros"
-              name="otros"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Especifica cualquier otra intolerancia"
-            />
-          </div>
 
-          <div class="flex items-center justify-between">
+
+          <div class="flex items-center justify-center md:mt-4">
             <button
               type="submit"
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
+              class="bg-gradient-to-r from-gray-700 to-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
             >
               Enviar
             </button>

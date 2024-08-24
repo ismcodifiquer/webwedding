@@ -1,40 +1,52 @@
-<div>
-  <app-navbar class="navbarbarra text-black"></app-navbar>
-</div>
 
-<div class="w-full h-full contenido"></div>
+<app-navbar class=" text-white w-full bg-gray-500 "></app-navbar>
+
+
+<div class="w-full h-screen absolute  bg-center  overflow-x-hidden" style="background-image: url('assets/backgroundtodo.jpg'); background-size: auto;"></div>
 
 <!-- Menú móvil -->
-<div class="lg:hidden mt-4 px-4">
-  <select (change)="onSelectChange($event)" class="w-80 p-2 border select">
-    <option value="" disabled selected>Seleccione una opción</option>
-    <option value="ceremonia">Ceremonia</option>
-    <option value="restaurante">Banquete</option>
+<div class="md:hidden mt-0 px-8 relative text-2xl z-10">
+  <select (change)="onSelectChange($event)" class="w-80 p-2 border border-gray-300 rounded bg-white text-gray-800 mt-4 shadow text-base">
+    <option value="" class="text-salome" selected>Seleccione una opción</option>
+    <option value="ceremonia" class="text-2xl">Ceremonia</option>
+    <option value="restaurante" class="text-2xl">Banquete</option>
   </select>
 </div>
 
 <!-- Menú de escritorio -->
-<div class="hidden lg:block mt-4">
-  <div id="infoLeftMenuWrapper">
-    <a (click)="selectComponent('ceremonia')" [class.infoLeftMenuItemSelected]="currentComponent === 'ceremonia'">
-      <span class="infoLeftMenuItemText pl-[38%]">
-        Ceremonia
-      </span>
+<div class="hidden md:block md:mt-6 overflow-hidden w-[30vh]">
+  <div id="infoLeftMenuWrapper" class="flex flex-col  ">
+    <a
+      (click)="selectComponent('ceremonia')"
+      class="relative w-48 h-48 text-red-600 text-center no-underline bg-cover bg-center cursor-pointer flex items-center justify-center"
+      [ngClass]="{
+        'bg-[url(assets/submenuButton.0.normal.png)]': currentComponent !== 'ceremonia',
+        'bg-[url(assets/submenuButton.0.over.png)]': currentComponent === 'ceremonia'
+      }"
+    >
+      <span class="text-center flex items-center justify-center">Ceremonia</span>
     </a>
 
-    <a (click)="selectComponent('restaurante')" [class.infoLeftMenuItemSelected]="currentComponent === 'restaurante'">
-      <span class="infoLeftMenuItemText pl-[43%]">
-        Banquete
-      </span>
+    <a
+      (click)="selectComponent('restaurante')"
+      class="relative w-48 h-48 text-red-600 text-center no-underline bg-cover bg-center cursor-pointer flex items-center justify-center z-50"
+      [ngClass]="{
+        'bg-[url(assets/submenuButton.0.normal.png)]': currentComponent !== 'restaurante',
+        'bg-[url(assets/submenuButton.0.over.png)]': currentComponent === 'restaurante'
+      }"
+    >
+      <span class="text-center flex items-center justify-center">Banquete</span>
     </a>
   </div>
 </div>
 
+
+
 <!-- Contenido dinámico -->
-<div *ngIf="currentComponent === 'ceremonia'" class="ceremonia">
-  <app-paginasab></app-paginasab>
+<div *ngIf="currentComponent === 'ceremonia'" class="h-[50%] mt-[60%] md:mt-0 md:overflow-hidden">
+  <app-paginasab class="flex flex-col items-center justify-center"></app-paginasab>
 </div>
 
-<div *ngIf="currentComponent === 'restaurante'" class="banquete">
-  <app-paginascd></app-paginascd>
+<div *ngIf="currentComponent === 'restaurante'" class="mt-[70%] md:mt-0 md:overflow-hidden">
+  <app-paginascd class="flex flex-col items-center justify-center"></app-paginascd>
 </div>
