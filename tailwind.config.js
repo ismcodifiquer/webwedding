@@ -3,6 +3,9 @@ module.exports = {
     "./src/**/*.{html,scss}", // Ajusta la ruta si es necesario
   ],
   theme: {
+    screens: {
+      'iphone13pro': '390px'
+    },
     extend: {
       colors: {
         beidge:{
