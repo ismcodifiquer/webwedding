@@ -1,29 +1,27 @@
-
 import { NavbarComponent } from '../navbar/navbar.component';
-import { Component, Input, OnInit } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { NgClass, CommonModule } from '@angular/common';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [NavbarComponent, NgClass],
+  imports: [NavbarComponent, NgClass, CommonModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      state('void', style({ opacity: 0 })),
+      transition(':enter', [
+        animate('2000ms ease-out', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
-export class ContactComponent implements OnInit{
-
-  isLoaded: boolean = false;
-
+export class ContactComponent implements OnInit {
+  showImage = false;
 
   ngOnInit() {
-    // Si la imagen ya está en caché, forzamos la animación
-    setTimeout(() => {
-      this.isLoaded = true;
-    }, 100);
+    setTimeout(() => this.showImage = true, 1000);
   }
-
-  onImageLoad() {
-    this.isLoaded = true;
-  }
-
 }
