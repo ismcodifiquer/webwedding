@@ -30,7 +30,7 @@ export class FormularioComponent {
 
     const subject = 'Formulario de Contacto boda Maria Luisa e Ismael';
     const body = `¿Asistirás?: ${this.asistir ? 'Sí' : 'No'} \nNombre: ${this.name}\nNombre Acompañante: ${this.name2} \nAlergias: ${this.allergies}\nEs vegano: ${this.vegan ? 'Sí' : 'No'}\nEs vegetariano/a: ${this.vegetariano ? 'Si' : 'No'}\nEs celíaco/a: ${this.celiaco ? 'Si' : 'No'}`;
-    const mailtoLink = `mailto:ismaelvi1601@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:ismaelymluisawedding@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Abrir el cliente de correo predeterminado del usuario
     window.location.href = mailtoLink;

@@ -5,7 +5,7 @@
 <div class="w-full h-screen absolute  bg-center  overflow-x-hidden bg-gray-600"></div>
 
 <!-- Menú móvil -->
-<div class="md:hidden mt-0 relative text-2xl z-40">
+<div class="md:hidden mt-0 relative text-2xl z-40" [@jumpIn]>
   <select (change)="onSelectChange($event)" class="w-[80%] h-10 ml-10 border border-white rounded-xl bg-gray-800 text-white mt-4 shadow text-base">
     <option value="" class="text-salome" selected>Seleccione una opción</option>
     <option value="ceremonia" class="text-2xl">Ceremonia</option>
@@ -43,10 +43,10 @@
 
 
 <!-- Contenido dinámico -->
-<div *ngIf="currentComponent === 'ceremonia'" class="h-[50%] mt-[60%] md:mt-0 md:overflow-hidden">
+<div *ngIf="currentComponent === 'ceremonia'" class="h-[50%] mt-[60%] md:mt-0 md:overflow-hidden" [@fadeIn]>
   <app-paginasab class="flex flex-col items-center justify-center"></app-paginasab>
 </div>
 
-<div *ngIf="currentComponent === 'restaurante'" class="mt-[70%] md:mt-0 md:overflow-hidden">
+<div *ngIf="currentComponent === 'restaurante'" class="mt-[70%] md:mt-0 md:overflow-hidden" [@fadeIn]>
   <app-paginascd class="flex flex-col items-center justify-center"></app-paginascd>
 </div>
