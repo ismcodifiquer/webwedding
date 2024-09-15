@@ -1,15 +1,14 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { PaginasabComponent } from '../paginasab/paginasab.component';
-import { PaginascdComponent } from '../paginascd/paginascd.component';
+
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NavbarComponent, PaginasabComponent, PaginascdComponent, CommonModule],
+  imports: [NavbarComponent, CommonModule],
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'], // Corrección: 'styleUrls' en lugar de 'styleUrl'
   animations: [

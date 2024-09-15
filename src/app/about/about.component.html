@@ -1,52 +1,105 @@
+<app-navbar class="text-white w-full bg-gray-500"></app-navbar>
 
-<app-navbar class=" text-white w-full bg-gray-500 "></app-navbar>
-
-
-<div class="w-full h-screen absolute  bg-center  overflow-x-hidden bg-gray-600"></div>
-
-<!-- Menú móvil -->
-<div class="md:hidden mt-0 relative text-2xl z-40" [@jumpIn]>
-  <select (change)="onSelectChange($event)" class="w-[80%] h-10 ml-10 border border-white rounded-xl bg-gray-800 text-white mt-4 shadow text-base">
-    <option value="" class="text-salome" selected>Seleccione una opción</option>
-    <option value="ceremonia" class="text-2xl">Ceremonia</option>
-    <option value="restaurante" class="text-2xl">Banquete</option>
-  </select>
-</div>
-
-<!-- Menú de escritorio -->
-<div class="hidden md:block md:mt-6 overflow-hidden w-[30vh]">
-  <div id="infoLeftMenuWrapper" class="flex flex-col  ">
-    <a
-      (click)="selectComponent('ceremonia')"
-      class="relative w-48 h-48 text-red-600 text-center no-underline bg-cover bg-center cursor-pointer flex items-center justify-center"
-      [ngClass]="{
-        'bg-[url(assets/submenuButton.0.normal.png)]': currentComponent !== 'ceremonia',
-        'bg-[url(assets/submenuButton.0.over.png)]': currentComponent === 'ceremonia'
-      }"
-    >
-      <span class="text-center flex items-center justify-center">Ceremonia</span>
-    </a>
-
-    <a
-      (click)="selectComponent('restaurante')"
-      class="relative w-48 h-48 text-red-600 text-center no-underline bg-cover bg-center cursor-pointer flex items-center justify-center z-50"
-      [ngClass]="{
-        'bg-[url(assets/submenuButton.0.normal.png)]': currentComponent !== 'restaurante',
-        'bg-[url(assets/submenuButton.0.over.png)]': currentComponent === 'restaurante'
-      }"
-    >
-      <span class="text-center flex items-center justify-center">Banquete</span>
-    </a>
+<div class="w-full min-h-screen bg-gray-600 overflow-x-hidden relative">
+  <!-- Menú móvil -->
+  <div class="md:hidden mt-4 px-4 relative z-40" [@jumpIn]>
+    <select (change)="onSelectChange($event)" class="w-full h-12 border border-white rounded-xl bg-gray-800 text-white shadow text-base">
+      <option value="ceremonia">Ceremonia</option>
+      <option value="restaurante">Banquete</option>
+    </select>
   </div>
-</div>
 
+  <!-- Menú de escritorio -->
+  <div class="hidden md:block md:absolute md:left-4 lg:left-8 xl:left-12 md:top-1/2 md:-translate-y-1/2 z-40">
+    <div id="infoLeftMenuWrapper" class="flex flex-col space-y-4">
+      <a (click)="selectComponent('ceremonia')"
+         class="w-40 h-40 lg:w-48 lg:h-48 text-red-600 text-center no-underline bg-cover bg-center cursor-pointer flex items-center justify-center rounded-full transition-transform hover:scale-105"
+         [ngClass]="{
+           'bg-[url(assets/submenuButton.0.normal.png)]': currentComponent !== 'ceremonia',
+           'bg-[url(assets/submenuButton.0.over.png)]': currentComponent === 'ceremonia'
+         }">
+        <span class="text-lg lg:text-xl font-bold">Ceremonia</span>
+      </a>
 
+      <a (click)="selectComponent('restaurante')"
+         class="w-40 h-40 lg:w-48 lg:h-48 text-red-600 text-center no-underline bg-cover bg-center cursor-pointer flex items-center justify-center rounded-full transition-transform hover:scale-105"
+         [ngClass]="{
+           'bg-[url(assets/submenuButton.0.normal.png)]': currentComponent !== 'restaurante',
+           'bg-[url(assets/submenuButton.0.over.png)]': currentComponent === 'restaurante'
+         }">
+        <span class="text-lg lg:text-xl font-bold">Banquete</span>
+      </a>
+    </div>
+  </div>
 
-<!-- Contenido dinámico -->
-<div *ngIf="currentComponent === 'ceremonia'" class="h-[50%] mt-[60%] md:mt-0 md:overflow-hidden" [@fadeIn]>
-  <app-paginasab class="flex flex-col items-center justify-center"></app-paginasab>
-</div>
+  <!-- Contenido principal -->
+  <div class="flex justify-center items-center min-h-screen p-4 md:p-8 lg:p-12">
+    <div *ngIf="currentComponent === 'ceremonia'" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl" [@fadeIn]>
+      <div class="border-2 border-blue-400 rounded-xl bg-gray-800 shadow-xl p-4 md:p-6 lg:p-8">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-salomen text-white text-center mb-4">
+          CEREMONIA: IGLESIA NUESTRA SEÑORA DE LA ASUNCIÓN
+        </h2>
 
-<div *ngIf="currentComponent === 'restaurante'" class="mt-[70%] md:mt-0 md:overflow-hidden" [@fadeIn]>
-  <app-paginascd class="flex flex-col items-center justify-center"></app-paginascd>
+        <hr class="my-4 border-[0.1rem] border-white w-full opacity-45">
+
+        <div class="flex flex-col space-y-2 text-white mb-4">
+          <div class="flex items-center justify-between">
+            <span class="font-salome font-bold text-sm sm:text-base md:text-lg">Fecha:</span>
+            <span class="text-blue-400 font-bold text-sm sm:text-base md:text-lg">16/11/2024</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-salome font-bold text-sm sm:text-base md:text-lg">Hora:</span>
+            <span class="text-blue-400 font-bold text-sm sm:text-base md:text-lg">12:00 am</span>
+          </div>
+        </div>
+
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-4">
+          <img src="../../assets/campoamor.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+
+        <div class="text-center text-white">
+          <p class="mb-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Dirección:</p>
+          <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd6480066937d14d:0x8bb57705b7b2382d?sa=X&ved=1t:8290&ictx=111" target="_blank" class="text-blue-400 hover:underline">
+            <span class="block font-salome font-extrabold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+              Pl. de la Inmaculada, s/n <br> 30820 Alcantarilla, Murcia
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="currentComponent === 'restaurante'" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl" [@fadeIn]>
+      <div class="border-2 border-blue-400 rounded-xl bg-gray-800 shadow-xl p-4 md:p-6 lg:p-8">
+        <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-salomen text-white text-center mb-4">
+          BANQUETE: SALONES EL ATARDECER
+        </h2>
+
+        <hr class="my-4 border-[0.1rem] border-white w-full opacity-45">
+
+        <div class="flex flex-col space-y-2 text-white mb-4">
+          <div class="flex items-center justify-between">
+            <span class="font-salome font-bold text-sm sm:text-base md:text-lg">Fecha:</span>
+            <span class="text-blue-400 font-bold text-sm sm:text-base md:text-lg">16/11/2024</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-salome font-bold text-sm sm:text-base md:text-lg">Hora:</span>
+            <span class="text-blue-400 font-bold text-sm sm:text-base md:text-lg">14:00 am</span>
+          </div>
+        </div>
+
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-4">
+          <img src="../../assets/salones.jpg" alt="salones atardecer" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+
+        <div class="text-center text-white">
+          <p class="mb-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Dirección:</p>
+          <a href="https://www.google.es/maps/place/El+Atardecer+Salones/@37.9757308,-1.2290601,17z/data=!3m1!4b1!4m6!3m5!1s0xd647fe0e1d95929:0x32a0d778c12a914!8m2!3d37.9757308!4d-1.2290601!16s%2Fg%2F11cs23glcy?hl=es&entry=ttu" target="_blank" class="text-blue-400 hover:underline">
+            <span class="block font-salome font-extrabold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+              C. Maestra Josefina Lozano Pinar, 19 <br> 30820 Alcantarilla, Murcia
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
